@@ -1,0 +1,9 @@
+module PE14 where
+    memoized_work :: Int -> Int
+    memoized_work = (map work [0 ..] !!)
+        where
+            work n
+                | n<=1 = 0
+                | even n = memoized_work (n`div`2)+1
+                | otherwise = memoized_work ((n*3)+1)+1
+    ans=maximum[(memoized_work(n),n)|n<-[1..1000000]] -- i think this could work but it's slow as hell
