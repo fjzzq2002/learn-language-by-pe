@@ -33,7 +33,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager" selected="Application.PE59">
+  <component name="RunManager" selected="Application.PE1">
     <configuration name="PE1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PE1" />
       <module name="PE" />
@@ -50,8 +50,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PE59" />
         <item itemvalue="Application.PE1" />
+        <item itemvalue="Application.PE59" />
       </list>
     </recent_temporary>
   </component>

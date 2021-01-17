@@ -1,0 +1,24 @@
+module PE102 where
+    import System.IO
+    data Point a=Point a a deriving(Eq,Show)
+    instance Num a=>Num(Point a) where
+        (+) (Point a b) (Point c d)=Point (a+c) (b+d)
+        (-) (Point a b) (Point c d)=Point (a-c) (b-d)
+    cp (Point a b) (Point c d)=a*d-b*c
+    data Triangle u=Triangle u u u deriving(Eq,Show)
+    area2 (Triangle a b c)=abs(cp (c-a) (b-a)) -- area*2
+    ck_ a b c d -- just trying guard
+        | b==0 || c==0 || d==0 = False
+        | otherwise = a==b+c+d
+    ct t@(Triangle a b c)=
+        ck_ (area2 t) (area2 (Triangle a b (Point 0 0))) (area2 (Triangle b c (Point 0 0))) (area2 (Triangle a c (Point 0 0)))
+    parseline s=
+        ct (Triangle (Point a b) (Point c d) (Point e f))
+        where
+            (a,b,c,d,e,f)=read ("("++s++")") :: (Int,Int,Int,Int,Int,Int)
+    run = do
+        handle <- openFile "p102_triangles.txt" ReadMode
+        g <- hGetContents handle
+--        putStrLn(show(length(filter (==True) (map parseline (lines g)))))
+        print $ length $ filter (==True) $ map parseline $ lines g
+        hClose handle
