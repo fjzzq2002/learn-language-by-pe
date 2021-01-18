@@ -6,6 +6,7 @@
 
 + Java
 + Haskell
++ Julia
 + Rust
 + Lean
 
